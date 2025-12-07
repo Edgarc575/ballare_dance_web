@@ -1,0 +1,50 @@
+  <div class="contenedor-formulario">
+        <div class="formulario">
+            <form action="https://formsubmit.co/correoelectronico@gmail.com" method="POST" id="contactoform">
+                <label class="titulo-formulario">Formulario</label>
+                <label for="txtNombre">Nombre completo:</label>
+                <input type="text" name="Nombre" id="txtNombre" placeholder="Nombres & Apellidos" required pattern=".*\S.*"/>
+                <br />
+                <label for="txtCorreo">Correo:</label>
+                <input type="email" name="Correo" id="txtCorreo" placeholder="correoelectro@gmail.com" required
+                    pattern=".*@gmail.com$" />
+                <br />
+                <label for="txtTelefono">Teléfono:</label>
+                <input type="text" name="Telefono" id="txtTelefono" placeholder="(504) XXXX-XXXX" required pattern=".*\S.*"/>
+                <br />
+                <label for="txtDepartamento">Departamento:</label>
+                <select name="Departamento">
+                    <option value="0" selected>Seleccione</option>
+                    <option value="1">Atlántida</option>
+                    <option value="2">Choluteca</option>
+                    <option value="3">Colón</option>
+                    <option value="4">Comayagua</option>
+                    <option value="5">Copán</option>
+                    <option value="6">Cortés</option>
+                    <option value="7">El Paraíso</option>
+                    <option value="8">Francisco Morazán</option>
+                    <option value="9">Gracias a Dios</option>
+                    <option value="10">Intibucá</option>
+                    <option value="11">Islas de la Bahía</option>
+                    <option value="12">La Paz</option>
+                    <option value="13">Lempira</option>
+                    <option value="14">Ocotepeque</option>
+                    <option value="15">Olancho</option>
+                    <option value="16">Santa Bárbara</option>
+                    <option value="17">Valle</option>
+                    <option value="18">Yoro</option>
+                </select>
+                <br />
+                <label for="txtDomicilio">Domicilio:</label>
+                <input type="text" name="Domicilio" id="txtDomicilio" placeholder="Domicilio" required pattern=".*\S.*"/>
+                <br />
+                <label for="txtComentario">Comentario:</label>
+                <br />
+                <textarea name="Comentario" id="txtComentario" rows="5" cols="30" placeholder="Comentario" required pattern=".*\S.*"></textarea>
+                <br />
+                <input type="submit" id="btnenviar" value="Enviar formulario" onClick="">
+                <input type="hidden" name="_next" value="http://localhost:5173//contacto.html" target="_blank">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+        </div>
+    </did>
