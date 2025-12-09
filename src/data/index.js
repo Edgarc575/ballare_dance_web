@@ -5,7 +5,7 @@ export const getData = (page) => {
     console.log("Getting Context Data for page", page);
     let contextData = {};
     switch (page) {
-        case "/index.html":
+        case "/galeria.html":
             contextData = getGaleriaData();
             break;
         case "/eventos.html":
