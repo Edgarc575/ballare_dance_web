@@ -37,7 +37,7 @@ jobs:
       - name: Subir el Sitio compilado a GP
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/index.html'
+          path: './dist'
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
