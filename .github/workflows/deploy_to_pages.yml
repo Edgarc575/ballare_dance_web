@@ -1,24 +1,25 @@
-name: VITE MPA Proceso de Despligue a Github Pages - Equipo2
+name: VITE MPA Proceso de Despligue a Github Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
 env:
-  DEPLOY_BASE_URL: ${{vars.DEPLOY_BASE_URL}}
+  DEPLOY_BASE_URL: ${{ vars.DEPLOY_BASE_URL }}
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     environment:
       name: github-pages
-      url: ${{steps.github_pages.outputs.url}}
+      url: ${{ steps.github-pages.output.url }}
     runs-on: ubuntu-latest
     steps:
       - name: Clonar Repositorio
@@ -27,7 +28,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: "npm"
       - name: Instalar Dependencias del Proyecto
         run: npm install
       - name: Compilar Sitio (BUILD)
@@ -37,7 +37,7 @@ jobs:
       - name: Subir el Sitio compilado a GP
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './dist/index.html'
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
